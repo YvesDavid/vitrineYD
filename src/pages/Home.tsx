@@ -9,6 +9,24 @@ export default function Home() {
   return (
     <>
       <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: "Yves David",
+            url: "https://www.yvesdavid.fr",
+            description:
+              "Création de sites web modernes, design premium, référencement et développement sur mesure.",
+            areaServed: "France",
+            knowsAbout: [
+              "Développement web",
+              "Création de site internet",
+              "SEO",
+              "React",
+              "Vite"
+            ]
+          })}
+        </script>
         <meta property="og:title" content="Yves David | Développeur Web Freelance" />
         <meta
           property="og:description"
