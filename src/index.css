@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+/* Layout */
+.section-wrap {
+  @apply max-w-7xl mx-auto px-6 py-28;
+}
+
+/* Titles */
+.page-label {
+  @apply uppercase tracking-[0.35em] text-xs text-stone-500;
+}
+
+.page-title {
+  @apply mt-5 text-5xl md:text-7xl font-semibold tracking-tight;
+}
+
+.page-subtitle {
+  @apply mt-6 text-xl text-stone-500 leading-9;
+}
+
+/* Cards */
+.glass-card {
+  @apply rounded-[32px] bg-white border border-stone-200 shadow-sm;
+}
+
+/* Buttons */
+.btn-dark {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-stone-900 text-white font-medium transition hover:opacity-90;
+}
+
+.btn-light {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white border border-stone-200 text-stone-900 font-medium transition hover:bg-stone-50;
+}
+
+/* Gold button */
+.btn-gold {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-medium transition;
+  background: linear-gradient(135deg, #d6b36a, #b8924f);
+}
+
+.btn-gold:hover {
+  filter: brightness(1.05);
+}
+
+/* Ghost button */
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-8 py-4 rounded-full text-stone-700 font-medium transition bg-transparent border border-transparent;
+}
+
+.btn-ghost:hover {
+  @apply bg-white/70 border-stone-200;
+}
+
+/* Icon button */
+.btn-icon {
+  @apply inline-flex items-center gap-2 px-7 py-4 rounded-full bg-stone-900 text-white font-medium transition;
+}
+
+.btn-icon:hover {
+  @apply opacity-90;
+}
