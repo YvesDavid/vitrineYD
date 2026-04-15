@@ -9,19 +9,14 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>
-          Yves David | Développeur Web Freelance
-        </title>
-
+        <meta property="og:title" content="Yves David | Développeur Web Freelance" />
         <meta
-          name="description"
-          content="Création de sites web modernes, design premium, référencement et développement sur mesure pour professionnels et entreprises."
+          property="og:description"
+          content="Création de sites web modernes, design premium et développement sur mesure."
         />
-
-        <meta
-          name="keywords"
-          content="développeur web freelance, création site internet, site vitrine, application web, référencement, freelance France"
-        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.yvesdavid.fr/" />
+        <meta property="og:image" content="https://www.yvesdavid.fr/og-cover.jpg" />
       </Helmet>
 
       <Hero />
