@@ -7,9 +7,8 @@ import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
 
-const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 70);
@@ -108,58 +107,58 @@ const [mobileOpen, setMobileOpen] = useState(false);
           </div>
 
           {/* Menu */}
-         {/* Desktop nav */}
-<nav className="hidden md:flex gap-6 md:gap-8 text-sm text-stone-600 items-center">
-  <Link to="/" className={isActive("/")}>Accueil</Link>
-  <Link to="/projects" className={isActive("/projects")}>Projets</Link>
-  <Link to="/services" className={isActive("/services")}>Services</Link>
-  <Link to="/contact" className={isActive("/contact")}>Contact</Link>
-</nav>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex gap-6 md:gap-8 text-sm text-stone-600 items-center">
+            <Link to="/" className={isActive("/")}>Accueil</Link>
+            <Link to="/projects" className={isActive("/projects")}>Projets</Link>
+            <Link to="/services" className={isActive("/services")}>Services</Link>
+            <Link to="/contact" className={isActive("/contact")}>Contact</Link>
+          </nav>
 
-{/* Mobile button */}
-<button
-  onClick={() => setMobileOpen(true)}
-  className="md:hidden h-11 w-11 rounded-full border border-stone-200 bg-white flex items-center justify-center"
->
-  <Menu size={18} />
-</button>
+          {/* Mobile button */}
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden h-11 w-11 rounded-full border border-stone-200 bg-white flex items-center justify-center"
+          >
+            <Menu size={18} />
+          </button>
         </motion.div>
       </div>
 
       {mobileOpen && (
-  <div className="md:hidden fixed inset-0 z-[80] bg-black/30 backdrop-blur-sm">
-    <div className="absolute top-4 right-4 left-4 rounded-[28px] bg-white p-6 shadow-xl">
-      <div className="flex justify-between items-center mb-6">
-        <div className="font-semibold">Menu</div>
+        <div className="md:hidden fixed inset-0 z-[80] bg-black/30 backdrop-blur-sm">
+          <div className="absolute top-4 right-4 left-4 rounded-[28px] bg-white p-6 shadow-xl">
+            <div className="flex justify-between items-center mb-6">
+              <div className="font-semibold">Menu</div>
 
-        <button
-          onClick={() => setMobileOpen(false)}
-          className="h-10 w-10 rounded-full bg-stone-100 flex items-center justify-center"
-        >
-          <X size={18} />
-        </button>
-      </div>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="h-10 w-10 rounded-full bg-stone-100 flex items-center justify-center"
+              >
+                <X size={18} />
+              </button>
+            </div>
 
-      <div className="flex flex-col gap-3">
-        {[
-          ["Accueil", "/"],
-          ["Projets", "/projects"],
-          ["Services", "/services"],
-          ["Contact", "/contact"],
-        ].map(([label, path]) => (
-          <Link
-            key={label}
-            to={path}
-            onClick={() => setMobileOpen(false)}
-            className="h-14 rounded-2xl bg-stone-50 px-5 flex items-center"
-          >
-            {label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
+            <div className="flex flex-col gap-3">
+              {[
+                ["Accueil", "/"],
+                ["Projets", "/projects"],
+                ["Services", "/services"],
+                ["Contact", "/contact"],
+              ].map(([label, path]) => (
+                <Link
+                  key={label}
+                  to={path}
+                  onClick={() => setMobileOpen(false)}
+                  className="h-14 rounded-2xl bg-stone-50 px-5 flex items-center"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
